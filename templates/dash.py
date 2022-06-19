@@ -4,8 +4,8 @@
 from dash import Dash, html, dcc
 import plotly.express as px
 import pandas as pd
-from jupyter_dash import JupyterDash
-app = JupyterDash(__name__)
+
+app = Dash(__name__)
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
@@ -31,4 +31,4 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
