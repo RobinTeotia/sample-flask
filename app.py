@@ -1,9 +1,18 @@
-from flask import Flask
-from flask import render_template
+import dash
+import dash_html_components as html
+import flask
 
-server = Flask(__name__)
+server = flask.Flask(__name__)
 
 
-@server.route('/plotly_dashboard') 
-def render_dashboard():
-    return flask.redirect('/pathname')
+@server.route("/")
+def home():
+    return "Hello, Flask!"
+
+
+app = dash.Dash(server=server, routes_pathname_prefix="/dash/")
+
+app.layout = html.Div("This is the Dash app.")
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
