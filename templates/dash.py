@@ -6,7 +6,7 @@ from dash import Dash, html, dcc
 import plotly.express as px
 import pandas as pd
 
-app = Dash(__name__,server=server)
+app = Dash(__name__,server=server,url_base_pathname='/pathname')
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
