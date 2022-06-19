@@ -5,7 +5,7 @@ from dash import Dash, html, dcc
 import plotly.express as px
 import pandas as pd
 
-app = Dash(__name__,server=app)
+app = Dash(__name__,server=server)
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
